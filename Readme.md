@@ -27,7 +27,13 @@ GRAPHQL_PORT=4000
 ### Start with graphql
 
 ```
-$ npm start or npm run graphql
+$ npm start
+```
+
+or
+
+```
+$ npm start graphql
 ```
 
 ### Start with apollo
