@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { ZeroConf } from 'zeroconf';
+import ZeroConfUpload from 'zeroconf_upload';
 import appRoot from 'app-root-path';
 import { ApolloServer } from 'apollo-server';
 
@@ -25,7 +26,7 @@ const initServer = async () => {
     },
     withApollo: true,
   });
-
+  zeroConf.use(ZeroConfUpload);
   await zeroConf.configuration();
 
   fs.writeFileSync(`${appRoot}/.zeroconf/schema.graphql`, zeroConf.typeDefs, 'utf-8');
